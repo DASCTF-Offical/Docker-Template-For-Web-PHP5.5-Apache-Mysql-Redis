@@ -72,7 +72,7 @@ RUN chown -R root:root /var/www/html/ && \
     sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list && \
 	  sed -i '/security/d' /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install libaio1 libnuma1 psmisc libmecab2 init-system-helpers redis-server -y && \
+    apt-get install libaio1 libnuma1 psmisc libmecab2 init-system-helpers redis-server -y --force-yes && \
     DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/files/mysql-common_5.7.29-1debian8_amd64.deb && \
     DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/files/mysql-community-client_5.7.29-1debian8_amd64.deb && \
     DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/files/mysql-client_5.7.29-1debian8_amd64.deb && \
